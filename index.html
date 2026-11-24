@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>8-Fortune Tech | Reliable Internet Connection</title>
+
+<style>
+:root {
+    --teal: #27C9C3;
+    --dark-teal: #0D7161;
+    --deep: #123D3B;
+    --text: #202B2A;
+    --muted: #71817F;
+    --light: #F2FBFA;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #EAF2F1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 65px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logo-text strong {
+    display: block;
+    font-size: 15px;
+    color: var(--deep);
+    line-height: 1.2;
+}
+
+.logo-text small {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--dark-teal);
+}
+
+.login-btn, .primary-btn {
+    background: var(--dark-teal);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    border: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.login-btn:hover, .primary-btn:hover {
+    background: var(--deep);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: var(--deep);
+}
+
+/* HERO */
+
+.hero {
+    padding: 85px 0;
+    background:
+      radial-gradient(circle at 90% 20%, #DDF9F6, transparent 35%),
+      linear-gradient(120deg, #FFFFFF, #F4FCFB);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.eyebrow {
+    color: var(--dark-teal);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--deep);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--dark-teal);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    padding: 11px 20px;
+    border: 1px solid #D4E5E2;
+    border-radius: 9px;
+    color: var(--deep);
+    font-weight: 600;
+}
+
+.hero-visual {
+    min-height: 340px;
+    background: linear-gradient(145deg, #0D7161, #27C9C3);
+    border-radius: 28px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    right: -65px;
+    top: -75px;
+}
+
+.hero-visual::after {
+    width: 190px;
+    height: 190px;
+    right: -25px;
+    top: -35px;
+}
+
+.wifi-symbol {
+    font-size: 95px;
+    text-align: center;
+    margin: 25px 0;
+    opacity: .95;
+}
+
+.hero-visual h2 {
+    font-size: 26px;
+}
+
+.hero-visual p {
+    color: #E4FFFC;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+/* PROMOTION */
+
+.promo-section {
+    padding: 55px 0;
+}
+
+.promo-card {
+    background: var(--light);
+    border: 1px solid #D9F1ED;
+    padding: 30px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.promo-card h2 {
+    color: var(--deep);
+    font-size: 25px;
+}
+
+.promo-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.promo-label {
+    color: var(--dark-teal);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* SECTIONS */
+
+section {
+    scroll-margin-top: 85px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: var(--deep);
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PACKAGES */
+
+.packages {
+    padding: 55px 0 75px;
+    background: #FAFDFC;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.package-card {
+    background: white;
+    border: 1px solid #E5EFED;
+    border-radius: 15px;
+    padding: 25px;
+    transition: .2s;
+}
+
+.package-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+}
+
+.package-card h3 {
+    font-size: 16px;
+    color: var(--deep);
+}
+
+.speed {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--dark-teal);
+    margin: 12px 0 0;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.price small {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.package-card p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 8px 0 18px;
+}
+
+.package-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--light);
+    color: var(--dark-teal);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* BENEFITS */
+
+.benefits {
+    padding: 75px 0;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 25px 18px;
+}
+
+.benefit-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 15px;
+    border-radius: 16px;
+    background: var(--light);
+    color: var(--dark-teal);
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.benefit-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* REWARDS */
+
+.rewards {
+    padding: 60px 0;
+}
+
+.rewards-box {
+    background: var(--deep);
+    color: white;
+    padding: 40px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.rewards-box h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.rewards-box p {
+    color: #D3EAE6;
+    font-size: 14px;
+    max-width: 480px;
+}
+
+.rewards-box .primary-btn {
+    background: var(--teal);
+    color: var(--deep);
+    white-space: nowrap;
+}
+
+/* FOOTER */
+
+footer {
+    background: #F4FAF9;
+    padding: 40px 0 25px;
+    border-top: 1px solid #E7F0EE;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.copyright {
+    border-top: 1px solid #E2ECE9;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        background: white;
+        border-bottom: 1px solid #E5EFED;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links .login-btn {
+        text-align: center;
+    }
+
+    .hero {
+        padding: 55px 0 35px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        min-height: 250px;
+        padding: 25px;
+    }
+
+    .wifi-symbol {
+        font-size: 75px;
+        margin: 5px 0;
+    }
+
+    .promo-section {
+        padding: 30px 0;
+    }
+
+    .promo-card {
+        padding: 22px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .promo-card h2 {
+        font-size: 21px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .packages {
+        padding: 45px 0;
+    }
+
+    .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .package-card {
+        padding: 17px;
+    }
+
+    .speed {
+        font-size: 27px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .benefits {
+        padding: 45px 0;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .benefit-card {
+        padding: 15px;
+    }
+
+    .rewards {
+        padding: 30px 0 50px;
+    }
+
+    .rewards-box {
+        padding: 28px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rewards-box h2 {
+        font-size: 25px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 360px) {
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#" class="logo">
+            <img src="Assets/Images/logo.png" alt="8-Fortune Tech Logo" class="logo-icon">
+            <div class="logo-text">
+                <strong>8-FORTUNE TECH</strong>
+                <small>NETWORK AND DATA SOLUTIONS</small>
+            </div>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#packages">Internet Plans</a>
+            <a href="#promotions">Promotions</a>
+            <a href="#rewards">8FT Rewards</a>
+            <a href="#contact">Contact</a>
+            <a href="subscriber/login.php" class="login-btn">
+                Subscriber Login
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <div>
+            <div class="eyebrow">WELCOME TO 8-FORTUNE TECH</div>
+
+            <h1>
+                FAST. RELIABLE.
+                <span>CONNECTED.</span>
+            </h1>
+
+            <p>
+                Experience reliable internet connectivity
+                with 8-Fortune Tech. Stay connected with
+                your family, business, and the world.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#packages" class="primary-btn">
+                    Explore Plans →
+                </a>
+
+                <a href="subscriber/login.php"
+                   class="secondary-btn">
+                    My Account
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div>
+                <strong>8FT CONNECTIVITY</strong>
+                <p>Connecting communities through technology.</p>
+            </div>
+
+            <div class="wifi-symbol">◉</div>
+
+            <div>
+                <h2>Internet for Everyone.</h2>
+                <p>Experience the power of staying connected.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROMOTION -->
+
+<section class="promo-section" id="promotions">
+    <div class="container">
+        <div class="promo-card">
+
+            <div>
+                <div class="promo-label">
+                    LIMITED-TIME PROMOTION
+                </div>
+
+                <h2>FREE INSTALLATION!</h2>
+
+                <p>
+                    Enjoy our special internet packages.
+                    No advance payment required.
+                </p>
+
+                <p><strong>December 1–31, 2026</strong></p>
+            </div>
+
+            <a href="#packages" class="primary-btn">
+                View Promotion →
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- INTERNET PACKAGES -->
+
+<section class="packages" id="packages">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Choose Your Internet Plan</h2>
+            <p>Find the right connection for your everyday needs.</p>
+        </div>
+
+        <div class="package-grid">
+
+            <div class="package-card">
+                <h3>STARTER PLAN</h3>
+                <div class="speed">15 Mbps</div>
+                <div class="price">₱999 <small>/ month</small></div>
+                <p>For everyday browsing and communication.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <h3>STANDARD PLAN</h3>
+                <div class="speed">20 Mbps</div>
+                <div class="price">₱1,299 <small>/ month</small></div>
+                <p>For browsing, streaming and daily use.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <h3>PLUS PLAN</h3>
+                <div class="speed">25 Mbps</div>
+                <div class="price">₱1,499 <small>/ month</small></div>
+                <p>For families and multiple devices.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <h3>PREMIUM PLAN</h3>
+                <div class="speed">30 Mbps</div>
+                <div class="price">₱1,999 <small>/ month</small></div>
+                <p>For entertainment and online activities.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <h3>ADVANCED PLAN</h3>
+                <div class="speed">35 Mbps</div>
+                <div class="price">₱2,299 <small>/ month</small></div>
+                <p>For demanding household connectivity.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <h3>ULTIMATE PLAN</h3>
+                <div class="speed">40 Mbps</div>
+                <div class="price">₱2,499 <small>/ month</small></div>
+                <p>For high-demand internet users.</p>
+                <a href="#contact">Inquire Now</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="benefits">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Why Choose 8FT?</h2>
+            <p>We are committed to keeping you connected.</p>
+        </div>
+
+        <div class="benefit-grid">
+
+            <div class="benefit-card">
+                <div class="benefit-icon">⌁</div>
+                <h3>Reliable Connectivity</h3>
+                <p>Internet solutions designed for your everyday needs.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">◈</div>
+                <h3>Customer Support</h3>
+                <p>Our team is ready to assist with your concerns.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">✦</div>
+                <h3>Subscriber Rewards</h3>
+                <p>Enjoy additional benefits through our loyalty program.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- REWARDS -->
+
+<section class="rewards" id="rewards">
+    <div class="container">
+
+        <div class="rewards-box">
+
+            <div>
+                <div class="eyebrow" style="color:#80E5DC;">
+                    EXCLUSIVE SUBSCRIBER BENEFITS
+                </div>
+
+                <h2>Every Payment Deserves a Reward.</h2>
+
+                <p>
+                    Earn 8FT Points from eligible subscription
+                    payments and redeem exciting rewards,
+                    gadgets, household essentials and more.
+                </p>
+            </div>
+
+            <a href="subscriber/login.php"
+               class="primary-btn">
+                Explore Rewards →
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="benefits" id="contact">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Ready to Get Connected?</h2>
+            <p>Contact 8-Fortune Tech and inquire about our internet services.</p>
+        </div>
+
+        <div style="text-align:center;">
+            <p style="margin-bottom:15px;">
+                <strong>Mobile:</strong> 09319718267
+            </p>
+
+            <p style="margin-bottom:22px;">
+                <strong>Email:</strong> 8fortunetech@gmail.com
+            </p>
+
+            <a href="tel:09319718267" class="primary-btn">
+                Contact Us
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="logo">
+                <img src="Assets/Images/logo.png" alt="8-Fortune Tech Logo" class="logo-icon">
+
+                <div class="logo-text">
+                    <strong>8-FORTUNE TECH</strong>
+                    <small>NETWORK AND DATA SOLUTIONS</small>
+                    <p>Connecting communities through technology.</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#packages">Plans</a>
+                <a href="#promotions">Promotions</a>
+                <a href="subscriber/login.php">Login</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 8-Fortune Tech Network And Data Solutions.
+            All Rights Reserved.
+        </div>
+
+    </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
+
+</body>
+</html>
